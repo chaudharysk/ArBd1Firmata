@@ -114,6 +114,12 @@ class ArBd1:
             LED = 12
         data=[LED]
         self.board.send_sysex(cmd,data)
+    def charlieplexingPov(self):
+       while 1:
+           for x in range(1, 13):
+               self.board.send_sysex(0x01, [x])
+        
+    
 
 
 
