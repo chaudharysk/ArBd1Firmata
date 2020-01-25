@@ -4,6 +4,8 @@ import time
 
 class ArBd1:
     def __init__(self, COM):
+        self.temp=None
+        self.humidity=None
         self.board = ArduinoNano(COM)
         self.iterator=util.Iterator(self.board)
         self.iterator.start()
@@ -24,12 +26,7 @@ class ArBd1:
         self.board.get_pin('a:3:o')
         self.board.get_pin('a:4:o')
 
-
-
-
-        pass
-
-    # Enter one or zero to yurn off and turn on Rgb led
+    # Enter one or zero to turn off and turn on Rgb led
     def rgbDigital(self, r, g, b):
         self.board.digital[9].write(g)
         self.board.digital[10].write(b)
@@ -118,6 +115,27 @@ class ArBd1:
        while 1:
            for x in range(1, 13):
                self.board.send_sysex(0x01, [x])
+
+
+    def dht11(self): # Function to fetch temp and humidity value
+        def getDht(*args, **kwargs):
+            #print(args)
+            # print util.two_byte_iter_to_str(args)
+            #print(kwargs)
+            self.humidity=args[0]
+            self.temp=args[1]
+
+
+        self.board.add_cmd_handler(0x02,getDht)
+        self.board.send_sysex(0x02, [])
+        time.sleep(1)
+    def tempAndHumidity(self):
+        self.dht11()
+        return [self.temp,self.humidity]
+
+# board=ArBd1('COM3')
+# print(board.tempAndHumidity())
+
         
     
 
