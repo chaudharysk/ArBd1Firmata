@@ -4,5 +4,5 @@ import sys
 
 from PyMata.pymata import PyMata
 
-board=PyMata("COM3")
-board.digital_write(1,0)
+board=PyMata("COM6")
+board.digital_write(9,1)

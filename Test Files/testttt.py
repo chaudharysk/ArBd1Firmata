@@ -1,22 +1,12 @@
-# from pyfirmata2 import ArduinoNano, Board,util
-# import time
-# board = ArduinoNano('COM6')
-# iterator=util.Iterator(board)
-# time.sleep(1)
-# board.send_sysex(0x0A,[])
-# time.sleep(1)
-# print(board.getDataValue())
-# time.sleep(1)
-
 import time
 
-import pyfirmata2
-from pyfirmata2 import Arduino, util
+import pyfirmata
+from pyfirmata import Arduino, util
 
 
 def main():
     board = Arduino("COM6")
-    board.add_cmd_handler(pyfirmata2.pyfirmata2.STRING_DATA, on_string_received)
+    board.add_cmd_handler(pyfirmata.pyfirmata.STRING_DATA, on_string_received)
 
     iter = util.Iterator(board)
     iter.start()
@@ -37,8 +27,8 @@ def write_loop(board):
     while True:
 
         message = util.str_to_two_byte_iter("Hello yo")
-        message = "Hello yo"
-        board.send_sysex(pyfirmata2.pyfirmata2.STRING_DATA, message)
+        message = 50
+        board.send_sysex(pyfirmata.pyfirmata.STRING_DATA, message)
 
         i += 1
 
@@ -49,11 +39,9 @@ def write_loop(board):
 
 
 def on_string_received(*args, **kwargs):
-    print
-    args
+    print(args)
     # print util.two_byte_iter_to_str(args)
-    print
-    kwargs
+    print(kwargs)
 
 
 if __name__ == "__main__":

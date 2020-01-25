@@ -1,32 +1,10 @@
-/*
-  Firmata is a generic protocol for communicating with microcontrollers
-  from software on a host computer. It is intended to work with
-  any host computer software package.
-
-  To download a host software package, please click on the following link
-  to open the list of Firmata client libraries in your default browser.
-
-  https://github.com/firmata/arduino#firmata-client-libraries
-
-  Copyright (C) 2006-2008 Hans-Christoph Steiner.  All rights reserved.
-  Copyright (C) 2010-2011 Paul Stoffregen.  All rights reserved.
-  Copyright (C) 2009 Shigeru Kobayashi.  All rights reserved.
-  Copyright (C) 2009-2016 Jeff Hoefs.  All rights reserved.
-
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-
-  See file LICENSE.txt for further informations on licensing terms.
-
-  Last updated August 17th, 2017
-*/
-
 #include <Servo.h>
 #include <Wire.h>
 #include <Firmata.h>
+#include "DHT.h"        //Include the DHT sensor library
 
+#define DHT_TYPE DHT11  //Define DHT sensor type
+#define DHT_PIN A0      //Define Pin connected to DHT sensor
 #define I2C_WRITE                   B00000000
 #define I2C_READ                    B00001000
 #define I2C_READ_CONTINUOUSLY       B00010000
@@ -46,7 +24,7 @@
 /*==============================================================================
  * GLOBAL VARIABLES
  *============================================================================*/
-
+DHT dht(DHT_PIN, DHT_TYPE);
 #ifdef FIRMATA_SERIAL_FEATURE
 SerialFirmata serialFeature;
 #endif
@@ -484,11 +462,28 @@ void sysexCallback(byte command, byte argc, byte *argv)
   byte data;
   int slaveRegister;
   unsigned int delayTime;
-  //int val = command & 0x03;
+
   switch (command) {
+
+    case 0x02: // Command to receive Temperature and Humidity Value
+        {
+          int h = dht.readHumidity();
+          int t = dht.readTemperature();
+          
+          
+          Firmata.write(START_SYSEX);
+          
+          Firmata.write(0x02);
+          Firmata.write(h);
+          Firmata.write(t);
+  
+          Firmata.write(END_SYSEX);
+        }
+        break;
     
-    case 0x01:
+    case 0x01: // Command For Charlie plexing ARBD 1
     {
+      
         switch(argv[0])
         {
           case 0x01:
@@ -878,6 +873,7 @@ void systemResetCallback()
 
 void setup()
 {
+  dht.begin();
   Firmata.setFirmwareVersion(FIRMATA_FIRMWARE_MAJOR_VERSION, FIRMATA_FIRMWARE_MINOR_VERSION);
 
   Firmata.attach(ANALOG_MESSAGE, analogWriteCallback);
