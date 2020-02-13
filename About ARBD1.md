@@ -35,7 +35,7 @@ If you want to know more about circuit basics and want to design your own circui
 blogs section Hatchnhack.com or you can also visit HatchnHack. :)
 
 ## ARBD1 Schematic
-
-<img src="/pictures/arbd1_schematic.png" alt="arbd1" width='400' height='300'>
-
+<p align="center">
+<img src="/pictures/arbd1_schematic_png.png" alt="arbd1" width='400' height='300'>
+</p>
 <img src="/pictures/hatchnhack_logo_black.png" alt="hatchnhack logo" width='250' height='100'>
