@@ -53,7 +53,7 @@ Buy Link - https://www.hnhcart.com/products/arbd-1
     
     charlieplexing(a1,a2,a3)  
     # Function used to control charlieplexed LED's on ARBD1
-    # More details about charlieplexing - https://arbd1.hatchnhack.com/arbd1-peripherals/multiplexing/charlieplexing
+    # More details on charlieplexing- https://arbd1.hatchnhack.com/arbd1-peripherals/multiplexing/charlieplexing
      '''
      accepts characters as argument :
     'Z' - HIGH IMPEDENCE
