@@ -39,5 +39,5 @@ blogs section Hatchnhack.com or you can also visit HatchnHack. :)
 <img src="/pictures/arbd1_schematic_png.png" alt="arbd1" width='400' height='300'>
 </p>
 <br/>
-______________________________________________________________________________________________________________________________________
+_________________________________________________________________________________________________________________________________
 <img src="/pictures/hatchnhack_logo_black.png" alt="hatchnhack logo" width='250' height='100'>
