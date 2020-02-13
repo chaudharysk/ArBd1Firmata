@@ -36,6 +36,6 @@ blogs section Hatchnhack.com or you can also visit HatchnHack. :)
 
 ## ARBD1 Schematic
 
-
+<img src="/pictures/arbd1_schematic.png" alt="arbd1" >
 
 <img src="/pictures/hatchnhack_logo_black.png" alt="hatchnhack logo" width='250' height='100'>
