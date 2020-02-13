@@ -5,6 +5,11 @@ About ARBD1 - <a href="about_arbd1.md">about_arbd1</a><br/>
 ARBD1 Documentation - https://arbd1.hatchnhack.com/<br/>
 Buy Link - https://www.hnhcart.com/products/arbd-1
 
+## Installing Arbd1 Library and uploading firmata firmware to Arbd1.
+
+Some Text
+
+
 ## Creating Object of Arbd1
 
     board=Arbd1(COM)
