@@ -1,7 +1,7 @@
 # ARBD1 Library
 
 Library for controlling ARBD1 On Board sensors and actuators of ARBD1.<br/>
-About ARBD1 - <br/>
+About ARBD1 - <a href="about_arbd1.md">about_arbd1</a><br/>
 ARBD1 Documentation - https://arbd1.hatchnhack.com/<br/>
 Buy Link - https://www.hnhcart.com/products/arbd-1
 
