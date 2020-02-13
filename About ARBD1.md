@@ -1,7 +1,10 @@
 ## About ARBD1
-ArBrd1 is a board designed by Hatchnhack that aims to help one develop Arduino skills starting from the introductory to advanced levels.
+ArBrd1 is a board designed by <a href="https://hatchnhack.com/">Hatchnhack</a> that aims to help one develop Arduino skills starting from the introductory to advanced levels.
 It has all the rudimentary components that one comes across while experimenting and prototyping with Arduino.
 ArBrd1 is especially useful for absolute beginners, whether they are school students or college students.
+
+<img src="/pictures/arbd1_board.jpg" alt="hatchnhack logo" width='600' height='500'>
+
 
 ## Why ARBD1 ?
 Many students start their journey with Arduino with loads of curiosity and enthusiasm but end up jumping off the boat too soon
@@ -29,3 +32,6 @@ blogs section Hatchnhack.com or you can also visit HatchnHack. :)
 
 ## ARBD1 Schematic
 
+
+
+<img src="/pictures/hatchnhack_logo_black.png" alt="hatchnhack logo" width='250' height='100'>
