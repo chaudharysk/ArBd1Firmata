@@ -3,7 +3,9 @@ ArBrd1 is a board designed by <a href="https://hatchnhack.com/">Hatchnhack</a> t
 It has all the rudimentary components that one comes across while experimenting and prototyping with Arduino.
 ArBrd1 is especially useful for absolute beginners, whether they are school students or college students.
 <p align="center">
+<br/>
 <img src="/pictures/arbd1_board.jpg" alt="ARBD1" width='600' height='500'>
+<br/>
 </p>
 
 ## Why ARBD1 ?
