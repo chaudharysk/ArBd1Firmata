@@ -36,7 +36,7 @@ blogs section Hatchnhack.com or you can also visit HatchnHack. :)
 
 ## ARBD1 Schematic
 <p align="center">
-<img src="/pictures/arbd1_schematic_png.png" alt="arbd1" width='400' height='300'>
+<img src="/pictures/arbd1_schematic_png.png" alt="arbd1">
 </p>
 <br/>
 _________________________________________________________________________________________________________________________________
